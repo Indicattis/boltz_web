@@ -1,13 +1,13 @@
 'use client'
 
-import Showcase from "@/components/home/Section/Forsale/Showcase";
 import { fetchProducts } from "@/data/contexts/products/products";
 import { useEffect, useState } from "react";
 
 import useProcess from "@/data/hooks/useProcess";
-import itemforsale from "@/data/datatype/itemforsale";
+import itemforsale from "@/data/datatype/product";
+import ItemShowcase from "@/components/body/galery_forsale/item_showcase";
 
-export default function Forsale() {
+export default function GaleryForsale() {
     const [data, setData] = useState<itemforsale[]>([])
 
     const { processing, processInit, processEnd } = useProcess();
@@ -28,12 +28,11 @@ export default function Forsale() {
     
         fetchData();
         }, []);
-         
     return (
         <div className="grid items-center content-center justify-center text-center gap-3 max-sm:grid-cols-1 max-lg:grid-cols-3 max-md:grid-cols-2 max-xl:grid-cols-4 max-2xl:grid-cols-5 grid-cols-6">
              {processing ? "" : 
             data.map((product) => (
-                <Showcase 
+                <ItemShowcase
                 id={product.id} 
                 description={product.description}
                 price={product.price}

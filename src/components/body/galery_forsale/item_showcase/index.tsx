@@ -1,13 +1,11 @@
 'use client'
 
-import itemforsale from "@/data/datatype/itemforsale";
+import product from "@/data/datatype/product";
 import { UNSPLASH_LINK } from "@/data/unsplash";
-import { IconShoppingCart } from "@tabler/icons-react";
-import Image from "next/image";
 import { useState } from "react";
 
 
-export default function Showcase(props: itemforsale) {
+export default function ItemShowcase(props: product) {
     const [hover, setHover] = useState<boolean>(false)
 
     return (
@@ -20,11 +18,11 @@ export default function Showcase(props: itemforsale) {
         onMouseLeave={() => setHover(false)}>
             <img className={`${hover ? "scale-110" : "scale-100"} transition-all`} src={`${UNSPLASH_LINK}/200x200?${props.title}`}/>
             <div className={`h-full flex flex-col justify-center transition-all ${hover ? "mt-3" : ""}`}>
-                <legend className="font-sans text-sm">
+                <legend className="font-sans text-md text-zinc-600">
                     {props.title}
                 </legend>
                 <div className={`font-bold text-xl font-sans`}>
-                    R${props.price}
+                    R${(props.price).toFixed(2)}
                 </div>
                 <div className={`text-xs text-zinc-400 font-sans`}>
                     em 12x R${((props.price/12)+props.price*0.01).toFixed(2)}

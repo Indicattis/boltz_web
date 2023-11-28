@@ -1,6 +1,6 @@
 'use client'
 
-import Item from '@/components/home/Header/Item';
+import HeaderItem from '@/components/header/default_item';
 import { IconShoppingCart, IconUser, IconBuildingStore } from '@tabler/icons-react';
 import React, { useState } from 'react';
 
@@ -14,9 +14,9 @@ export default function Header() {
         onMouseOver={() => setHover(true)}
         onMouseLeave={() => setHover(false)}>
             <nav className='flex w-full h-full content-between items-center'>
-                <Item tooltip='Store'><IconBuildingStore/></Item>
-                <Item tooltip='Profile'><IconUser/></Item>
-                <Item tooltip='Cart'><IconShoppingCart/></Item>
+                <HeaderItem tooltip='Store'><IconBuildingStore/></HeaderItem>
+                <HeaderItem tooltip='Profile'><IconUser/></HeaderItem>
+                <HeaderItem tooltip='Cart'><IconShoppingCart/></HeaderItem>
             </nav>
         </header>
     )

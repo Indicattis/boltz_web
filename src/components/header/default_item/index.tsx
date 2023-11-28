@@ -7,7 +7,7 @@ interface PropsItem {
 }
 
 
-export default function Item(props: PropsItem) {
+export default function HeaderItem(props: PropsItem) {
     const [hover, setHover] = useState<boolean>(false)
     return (
         <div className={
