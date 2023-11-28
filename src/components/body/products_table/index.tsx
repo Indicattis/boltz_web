@@ -51,7 +51,7 @@ export default function ProductsTable() {
                 </tr>
                 {processing ? "" : 
                 data.map((product) => (
-                <tr>
+                <tr key={product.id}>
                     <td>{product.id}</td>
                     <td>{product.title}</td>
                     <td>{product.description}</td>
