@@ -4,11 +4,11 @@ import { fetchProducts } from "@/data/contexts/products/products";
 import { useEffect, useState } from "react";
 
 import useProcess from "@/data/hooks/useProcess";
-import itemforsale from "@/data/datatype/product";
+import product from "@/data/datatype/product";
 import ItemShowcase from "@/components/body/galery_forsale/item_showcase";
 
 export default function GaleryForsale() {
-    const [data, setData] = useState<itemforsale[]>([])
+    const [data, setData] = useState<product[]>([])
 
     const { processing, processInit, processEnd } = useProcess();
     useEffect(() => {
@@ -33,6 +33,7 @@ export default function GaleryForsale() {
              {processing ? "" : 
             data.map((product) => (
                 <ItemShowcase
+                status={product.status}
                 id={product.id} 
                 description={product.description}
                 price={product.price}
