@@ -37,6 +37,7 @@ export default function GaleryForsale() {
                 description={product.description}
                 price={product.price}
                 title={product.title}
+                offer={product.offer}
                 key={product.id}/>
             ))}
         </div>

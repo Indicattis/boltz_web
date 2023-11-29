@@ -1,16 +1,16 @@
-import GaleryForsale from "@/components/body/galery_forsale";
+
 
 
 
 interface DefaultBoxProps {
-    tag: string,
+    tag?: string,
     children: React.ReactNode
 }
 
 
 export default function DefaultBox({children, tag}:DefaultBoxProps) {
     return (
-        <div className={`bg-white shadow-sm p-3 min-h-[400px] flex justify-center`}>
+        <div className={`flex justify-center flex-col gap-3`}>
             <legend className="absolute text-lg uppercase">{tag}</legend>
             {children}
         </div>
