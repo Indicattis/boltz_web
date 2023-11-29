@@ -92,13 +92,13 @@ export default function ProductsConfig({id}: ProductsConfig) {
                     </div>
                     <div>
                         <textarea className="border rounded-md p-1" placeholder="Description"
-                        name="" id="" cols={150} rows={4}
+                        cols={150} rows={4}
                         {...register("description")}
                         defaultValue={data?.description}></textarea>
                     </div>
                     <div>
                         <select className="border-b"
-                        name="" id="" placeholder="Status da publicação"
+                        placeholder="Status da publicação"
                         {...register("status")}
                         defaultValue={data?.status}>
                             <option value={4} selected>Online</option>
