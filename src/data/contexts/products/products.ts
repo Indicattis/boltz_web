@@ -40,3 +40,21 @@ export async function updateProduct(id: number, requestData: any) {
         throw error;
     }
 }
+
+export async function insertProduct(data: any) {
+    try {
+        const response = await axios.post(`${serverUrl}/product_insert`, data);
+        console.log("Produto cadastrado com sucesso:", response.data);
+    } catch (error) {
+        console.error("Erro ao cadastrar produto:", error);
+    }
+}
+
+export async function deleteProduct(id: number) {
+    try {
+        const response = await axios.post(`${serverUrl}/product_delete/${id}`);
+        console.log("Produto deletado com sucesso:", response.data);
+    } catch (error) {
+        console.error("Erro ao deletar produto:", error);
+    }
+}

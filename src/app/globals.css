@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'wildword';
+  src: url('../../public/WILD-WORLD.woff') format('woff2'),
+       url('../../public/WILD-WORLD.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   min-height: 100vh;
   background-repeat: no-repeat;
@@ -9,13 +17,14 @@ body {
 }
 .table {
   border-collapse: collapse;
-  text-indent: 30px;
+  text-indent: 3px;
   border-spacing: 12px;
 }
 
-td {
+/* td {
   padding: 3px;
-}
+} */
 input {
   outline: none;
+  width: 100%;
 }

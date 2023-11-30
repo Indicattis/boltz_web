@@ -23,7 +23,6 @@ export default function ProductsTable(props:ProductsTableProps) {
             try {
                 const Products = await fetchProducts();
                 setData(Products);
-                console.log(data);
             } catch (error) {
                 console.log(error);
             }
@@ -35,37 +34,36 @@ export default function ProductsTable(props:ProductsTableProps) {
         fetchData();
         }, []);
          
-    function getID(id: number) {
-        console.log(id)
-    }
     return (
-        <table className="table w-full text-gray-700 bg-white p-3 shadow-sm rounded-sm">
+        <table className="table w-full text-gray-700 bg-white">
             <thead>
-                <tr className="text-xs font-extralight font-sans">
-                    <th>Status</th>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th>Offer</th>
+                <tr className="text-xs">
+                    <th className="text-center py-5"></th>
+                    <th className="text-left max-md:hidden ">ID</th>
+                    <th className="text-left">Name</th>
+                    <th className="text-left max-md:hidden">Description</th>
+                    <th className="text-left">Price</th>
+                    <th className="text-left">Offer</th>
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody className="font-sans text-sm font-normal">
+            <tbody className="text-sm font-normal">
                 {processing ? "" : 
                 data.map((product) => (
-                <tr className="border-b rounded-md hover:bg-zinc-100" key={product.id}>
-                    <td className={`text-center px-10
-                    ${product.status == 4 ? "text-green-500" : ""}
+                <tr className="border-b font-extralight text-xs rounded-md hover:bg-zinc-100" key={product.id}>
+                    <td className={`text-center
+                    ${product.status == 4 ? "text-green-500 " : ""}
                     ${product.status == 1 ? "text-zinc-500" : ""}
                     ${product.status == 2 ? "text-yellow-500" : ""}
                     ${product.status == 3 ? "text-red-500" : ""}
                     `}>
-                        <IconPointFilled width={15}/>
+                        <IconPointFilled width={23} />
                     </td>
-                    <td>{product.id}</td>
-                    <td>{product.title}</td>
-                    <td>{product.description.length > 50
+                    <td className="max-md:hidden">{product.id}</td>
+                    <td>{product.title.length > 21
+                    ? product.title.substring(0, 21) + "..."
+                    : product.title}</td>
+                    <td className="max-md:hidden">{product.description.length > 50
                     ? product.description.substring(0, 50) + "..."
                     : product.description}</td>
                     <td>{"R$"+(product.price - (product.price*(product.offer/100))).toFixed(2)}</td>
