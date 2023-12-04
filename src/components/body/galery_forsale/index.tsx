@@ -29,7 +29,7 @@ export default function GaleryForsale() {
         fetchData();
         }, []);
     return (
-        <div className="grid items-center content-center justify-center text-center gap-3 max-sm:grid-cols-1 max-lg:grid-cols-3 max-md:grid-cols-2 max-xl:grid-cols-4 max-2xl:grid-cols-5 grid-cols-6">
+        <div className="grid place-items-center items-center min-h-[330px] p-1 content-center justify-center text-center gap-3 max-sm:grid-cols-1 max-lg:grid-cols-3 max-md:grid-cols-2 max-xl:grid-cols-4 max-2xl:grid-cols-5 grid-cols-6">
              {processing ? "" : 
             data.map((product) => (
                 <ItemShowcase

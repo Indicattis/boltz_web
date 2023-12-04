@@ -16,6 +16,7 @@ const config: Config = {
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
         custom: ['wildword', 'sans-serif'],
+        'newake': ['newake', 'sans-serif'],
       },
     },
   },

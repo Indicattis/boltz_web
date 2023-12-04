@@ -68,7 +68,7 @@ export default function ProductsTable(props:ProductsTableProps) {
                     : product.description}</td>
                     <td>{"R$"+(product.price - (product.price*(product.offer/100))).toFixed(2)}</td>
                     <td>{product.offer}%</td>
-                    <td className="text-center">
+                    <td className="text-center hover:animate-spin flex justify-center">
                         <DefaultButton onClick={() => props.sid(product.id)} variant="default"><IconSettings width={20}></IconSettings></DefaultButton>
                     </td>
                 </tr>

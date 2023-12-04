@@ -12,7 +12,7 @@ export default function ItemShowcase(props: product) {
         <div 
         key={props.id}
         className={`cursor-pointer w-[200px] flex flex-col items-center 
-        shadow-md rounded-sm text-zinc-700 h-[300px] hover:h-[310px]
+        shadow-md rounded-sm text-zinc-700 h-[310px] hover:h-[320px]
         transition-all overflow-hidden relative`}
         onMouseOver={() => setHover(true)}
         onMouseLeave={() => setHover(false)}>
@@ -24,21 +24,23 @@ export default function ItemShowcase(props: product) {
             ) : ""}
                 
 
-            <div className={`h-full font-sans flex flex-col justify-center transition-all ${hover ? "mt-3" : ""}`}>
-                <legend className="text-md text-zinc-600">
-                    {props.title}
+            <div className={`h-full text-slate-800 font-poppins flex flex-col justify-center transition-all ${hover ? "mt-3" : ""}`}>
+                <legend className="text-sm">
+                {props.title.length > 21
+                    ? props.title.substring(0, 21) + "..."
+                    : props.title}
                 </legend>
                 {props.offer > 0 ? (
-                    <div className="text-xs line-through">
+                    <div className="text-xs line-through font-poppins">
                         R${props.price}
                     </div>
                 ) : ""}
-                <div className={`font-bold text-xl`}>
-                    {props.offer > 0 ? "R$"+(props.price - (props.price*props.offer/100)).toFixed(2) : (
-                    "R$"+(props.price).toFixed(2)
+                <div className={`font-bold  text-2xl font-newake`}>
+                    {props.offer > 0 ? "$" + (props.price - (props.price*props.offer/100)).toFixed(2) : (
+                    "$" + (props.price).toFixed(2)
                     )}
                 </div>
-                <div className={`text-xs text-zinc-400`}>
+                <div className={`text-xs `}>
                     em 12x R${((props.price/12)+props.price*0.01).toFixed(2)}
                 </div>
             </div>
