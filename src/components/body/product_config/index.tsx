@@ -94,8 +94,8 @@ export default function ProductsConfig({id, back}: ProductsConfig) {
                                 className={`border rounded-md p-2 bg-white shadow`}
                                 type="text"
                                 placeholder=""
-                                {...register("title")}
-                                defaultValue={data?.title}
+                                {...register("prod_name")}
+                                defaultValue={data?.prod_name}
                                 />
                             </div>
                         </div>
@@ -107,8 +107,8 @@ export default function ProductsConfig({id, back}: ProductsConfig) {
                                 className={`border rounded-md p-2 bg-white shadow`}
                                 type="text"
                                 placeholder=""
-                                {...register("price")}
-                                defaultValue={data?.price}
+                                {...register("prod_price")}
+                                defaultValue={data?.prod_price}
                                 />
                             </div>
                             
@@ -118,33 +118,33 @@ export default function ProductsConfig({id, back}: ProductsConfig) {
                             className={`border rounded-md p-2 bg-white shadow`}
                             type="number"
                             placeholder=""
-                            {...register("offer")}
-                            defaultValue={data?.offer}
+                            {...register("prod_offer")}
+                            defaultValue={data?.prod_offer}
                             />
                             </div>
                         </div>
-                        <div className="w-full flex flex-col gap-2">
+                        {/* <div className="w-full flex flex-col gap-2">
                             <legend>Informações de estoque</legend>
                             <div className="flex justify-center items-center border rounded-lg p-[1px] gap-2 bg-zinc-100">
                                 <div className="w-20 text-center text-zinc-400">Desconto:</div>
                             <select className="border rounded-md p-[6px] bg-white shadow w-full"
                             placeholder="Status da publicação"
-                            {...register("status")}
-                            defaultValue={data?.status}>
+                            {...register("prod_status")}
+                            defaultValue={data?.prod_status}>
                                 <option value={4}>Online</option>
                                 <option value={2}>Análise</option>
                                 <option value={1}>Oculta</option>
                                 <option value={3}>Sem estoque</option>
                             </select>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="flex justify-center items-center border rounded-lg p-[1px] gap-2 bg-zinc-100">
                         <div className="w-18 text-center text-zinc-400">Descrição:</div>
                         <textarea className="w-full text-xs border rounded-md p-2 bg-white shadow" placeholder="Description"
                         rows={4}
-                        {...register("description")}
-                        defaultValue={data?.description}></textarea>
+                        {...register("prod_description")}
+                        defaultValue={data?.prod_description}></textarea>
                     </div>
                     <div className="flex gap-3 w-1/2">
                         <DefaultButton variant="default" type="button" onClick={() => back()}><IconArrowLeft/></DefaultButton>

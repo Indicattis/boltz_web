@@ -4,11 +4,12 @@
 
 type product = {
     id: number,
-    title: string,
-    description: string,
-    price: number,
-    offer: number,
-    status: number
+    prod_name: string,
+    prod_description: string,
+    prod_price: number,
+    prod_offer: number,
+    prod_status: number,
+    prod_stock: number
 }
 
 export default product

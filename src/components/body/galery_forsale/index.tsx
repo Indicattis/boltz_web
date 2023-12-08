@@ -31,14 +31,15 @@ export default function GaleryForsale() {
     return (
         <div className="grid place-items-center items-center min-h-[330px] p-1 content-center justify-center text-center gap-3 max-sm:grid-cols-1 max-lg:grid-cols-3 max-md:grid-cols-2 max-xl:grid-cols-4 max-2xl:grid-cols-5 grid-cols-6">
              {processing ? "" : 
-            data.map((product) => (
+            data && data.map((product) => (
                 <ItemShowcase
-                status={product.status}
+                prod_stock={product.prod_stock}
+                prod_status={product.prod_status}
                 id={product.id} 
-                description={product.description}
-                price={product.price}
-                title={product.title}
-                offer={product.offer}
+                prod_description={product.prod_description}
+                prod_price={product.prod_price}
+                prod_name={product.prod_name}
+                prod_offer={product.prod_offer}
                 key={product.id}/>
             ))}
         </div>

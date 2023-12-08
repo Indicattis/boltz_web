@@ -51,7 +51,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
                       <input
                         className={`border rounded-md p-2 bg-white shadow`}
                         type="text"
-                        {...register("title", { required: "Este campo é obrigatório" })}
+                        {...register("prod_name", { required: "Este campo é obrigatório" })}
                       />
                     </div>
                   </div>
@@ -61,7 +61,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
                       <input
                         className={`border rounded-md p-2 bg-white shadow`}
                         type="text"
-                        {...register("price", { required: "Este campo é obrigatório" })}
+                        {...register("prod_price", { required: "Este campo é obrigatório" })}
                       />
                     </div>
                     <div className="flex justify-center items-center border rounded-lg p-[1px] gap-2 bg-zinc-100">
@@ -69,16 +69,16 @@ import { useForm, SubmitHandler } from "react-hook-form";
                       <input
                         className={`border rounded-md p-2 bg-white shadow`}
                         type="number"
-                        {...register("offer")}
+                        {...register("prod_offer")}
                       />
                     </div>
                   </div>
-                  <div className="w-full flex flex-col gap-2">
+                  {/* <div className="w-full flex flex-col gap-2">
                     <div className="flex justify-center items-center border rounded-lg p-[1px] gap-2 bg-zinc-100">
                       <div className="w-20 text-center text-zinc-400" >Status:</div>
                       <select
                         className="border rounded-md p-[6px] bg-white shadow w-full"
-                        {...register("status", { required: "Este campo é obrigatório" })}
+                        {...register("prod_status", { required: "Este campo é obrigatório" })}
                       >
                         <option value={4}>Online</option>
                         <option value={2}>Análise</option>
@@ -86,7 +86,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
                         <option value={3}>Sem estoque</option>
                       </select>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
         
                 <div className="flex justify-center items-center border rounded-lg p-[1px] gap-2 bg-zinc-100">
@@ -94,7 +94,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
                   <textarea
                     className="w-full text-xs border rounded-md p-2 bg-white shadow"
                     placeholder="Descrição"
-                    {...register("description")}
+                    {...register("prod_description")}
                     rows={4}
                   ></textarea>
                 </div>
